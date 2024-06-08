@@ -1,5 +1,5 @@
 #!/bin/bash
-mycompose(){
+compose(){
   local compose_file=$1/docker-compose.yaml
   if ! [[ -z $1 && -f compose_file ]]; then
     shift
@@ -10,7 +10,7 @@ mycompose(){
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-  mycompose $@
+  compose $@
 fi
 
 deactivate(){
