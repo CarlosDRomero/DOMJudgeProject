@@ -1,0 +1,18 @@
+services:
+  jurado:
+    image: domjudge/judgehost:8.2.2 
+    #no olvidar privilegios
+    privileged: true
+    environment:
+      JUDGEDAEMON_PASSWORD: ${JUDGEDAEMON_PASSWORD}
+    volumes:
+      -  /sys/fs/cgroup:/sys/fs/cgroup:ro
+    networks:
+      - domjudge
+
+
+networks:
+  domjudge:
+    name: domjudge
+    external: true
+  

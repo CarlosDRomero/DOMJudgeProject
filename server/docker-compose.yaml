@@ -1,0 +1,25 @@
+services:
+  servidor:
+    image: domjudge/domserver:8.2.2 
+    hostname: domserver
+    env_file:
+      - ../mysql.env
+    environment:
+      MYSQL_HOST: bdjurado
+    ports:
+      - 80:80
+    networks:
+      - domjudge
+  bdjurado:
+    image: mariadb
+    hostname: bdjurado
+    env_file:
+      - ../mysql.env
+    ports:
+      - 3306:3306
+    networks:
+      - domjudge
+
+networks:
+  domjudge:
+    name: domjudge
