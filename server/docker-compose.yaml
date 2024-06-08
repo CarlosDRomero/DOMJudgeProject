@@ -3,7 +3,7 @@ services:
     image: domjudge/domserver:8.2.2 
     hostname: domserver
     env_file:
-      - ../mysql.env
+      - ../.mysql.env
     environment:
       MYSQL_HOST: bdjurado
     ports:
@@ -14,7 +14,7 @@ services:
     image: mariadb
     hostname: bdjurado
     env_file:
-      - ../mysql.env
+      - ../.mysql.env
     ports:
       - 3306:3306
     networks:
