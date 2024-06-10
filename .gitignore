@@ -1,2 +1,4 @@
 **.env
 !*example*.env
+ejercicios/*
+!ejercicios/hello_world.py
